@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Database;
 use App\Core\View;
+use App\Models\Empresa;
 
 class HomeController
 {
@@ -20,5 +21,9 @@ class HomeController
         View::render('home.index', [
             'mysql' => $mysql
         ]);
+
+        $empresa = Empresa::first();
+        var_dump($empresa);
+exit;
     }
 }

@@ -24,6 +24,6 @@ class HomeController
 
         $empresa = Empresa::first();
         var_dump($empresa);
-exit;
+        exit;
     }
 }

@@ -1,26 +1,27 @@
-#!/usr/bin/env php
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
 
 define('BASE_PATH', __DIR__);
 
-use App\Core\Migration;
-
 $command = $argv[1] ?? null;
+
 
 switch ($command) {
 
-    case 'migrate':
+    case 'seed':
 
-        $migration = new Migration();
+        foreach (glob(BASE_PATH . '/database/seeders/*.php') as $file) {
 
-        $migration->run();
+            require $file;
+
+        }
 
         break;
 
+
     default:
 
-        echo "Comando não encontrado\n";
+        echo "Comando inválido\n";
 
 }

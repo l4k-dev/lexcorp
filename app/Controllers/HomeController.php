@@ -21,9 +21,5 @@ class HomeController
         View::render('home.index', [
             'mysql' => $mysql
         ]);
-
-        $empresa = Empresa::first();
-        var_dump($empresa);
-        exit;
     }
 }
